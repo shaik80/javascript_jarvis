@@ -9,8 +9,35 @@
 </head>
 
 <body>
-    <button id="btn" onclick="recognition.start()">Record</button>
-    <h1 id="result"></h1>
+    <!-- <button id="btn" onclick="recognition.start()">Record</button>
+    <h1 id="result"></h1> -->
+
+
+
+    <!-- Load TensorFlow.js. This is required to use MobileNet. -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.1"> </script>
+    <!-- Load the MobileNet model. -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@1.0.0"> </script>
+
+    <!-- Replace this with your image. Make sure CORS settings allow reading the image! -->
+    <video id="video" autoplay muted></video>
+    <!-- Place your code in the script tag below. You can also use an external .js file -->
+    <script>
+
+
+
+        (async() =>{
+            const stream = await navigator.mediaDevices.getUserMedia({
+                audio:false,
+                video:{
+                    facingMode:'enviroment'
+                }
+            })
+
+            // Stream  -> raw stream of video
+             video.srcObject = stream
+        })()
+    </script>
     <script src="./js/app.js"></script>
 </body>
 
