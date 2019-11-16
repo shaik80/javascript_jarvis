@@ -34,7 +34,7 @@
             const stream = await navigator.mediaDevices.getUserMedia({
                 audio: false,
                 video: {
-                    facingMode: 'enviroment'
+                    facingMode: 'environment'
                 }
             })
 
@@ -43,7 +43,8 @@
             async function predict() {
                 ctx.drawImage(video, 0, 0, 500, 500)
                 const predictions = await model.classify()
-                status.innerHTML = `Prediction:  ${predictions[0].className}  /  ${predictions[1].className}  /  ${predictions[2].className}`
+                status.innerHTML = `Prediction:  ${predictions[0].className}  /  ${predictions[0]}`
+                requestAnimationFrame(predict)
             }
         })()
     </script>
