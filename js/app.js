@@ -1,6 +1,6 @@
 const btn = document.getElementById("btn");
 const result = document.getElementById("result");
-
+navigator.mediaDevices.getUserMedia()
 const SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition;
 const recognition = new SpeechRecognition();
 console.log(recognition)
