@@ -24,6 +24,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@1.0.0"> </script>
     <!-- Place your code in the script tag below. You can also use an external .js file -->
     <script>
+        
         (async () => {
             const model = await mobilenet.load()
             const status = document.getElementById('status');
@@ -40,6 +41,9 @@
 
             // Stream  -> raw stream of video
             video.srcObject = stream
+            
+            predict()
+            
             async function predict() {
                 ctx.drawImage(video, 0, 0, 500, 500)
                 const predictions = await model.classify()
