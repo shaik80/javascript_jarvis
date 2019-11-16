@@ -30,7 +30,7 @@
             const status = document.getElementById('status');
             const video = document.getElementById('video');
             const canvas = document.getElementById('canvas');
-            const ctx = c.getContext("2d");
+            const ctx = canvas.getContext("2d");
 
             const stream = await navigator.mediaDevices.getUserMedia({
                 audio: false,
