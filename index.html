@@ -14,7 +14,7 @@
 
 
     <video id="video" autoplay muted></video>
-    <canvas id="canvas" style="display: block;"></canvas>
+    <canvas id="canvas"  width="500" height="500"></canvas>
     <div id="status"></div>
 
 
@@ -43,7 +43,7 @@
             video.srcObject = stream
             
             predict()
-            
+
             async function predict() {
                 ctx.drawImage(video, 0, 0, 500, 500)
                 const predictions = await model.classify()
