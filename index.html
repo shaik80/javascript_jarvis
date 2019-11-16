@@ -46,7 +46,7 @@
 
             async function predict() {
                 ctx.drawImage(video, 0, 0, 500, 500)
-                const predictions = await model.classify()
+                const predictions = await model.classify(canvas)
                 status.innerHTML = `Prediction:  ${predictions[0].className}  /  ${predictions[0]}`
                 requestAnimationFrame(predict)
             }
